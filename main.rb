@@ -11,3 +11,8 @@ set :database, {adapter:'postgresql',
 
 class Post < ActiveRecord::Base
 end  
+
+get '/' do 
+'Hello'
+	
+end
