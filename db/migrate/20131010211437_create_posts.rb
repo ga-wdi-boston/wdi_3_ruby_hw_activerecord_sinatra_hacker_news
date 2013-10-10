@@ -11,6 +11,5 @@ class CreatePosts < ActiveRecord::Migration
   end
 
   def down
-  	 drop_table :posts
   end
 end

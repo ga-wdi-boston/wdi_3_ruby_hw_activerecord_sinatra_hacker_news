@@ -1,0 +1,25 @@
+<% @posts.each do |post| %>
+	<a href="/posts/<%= post.id %>"><h2><%= post.title %></h2></a> 
+
+	<%= post.created_at %>
+		<br/>
+		<%= post.link %>
+		<br/>
+		<%= post.body %>
+		<br/>
+		Up-votes: <%= post.up_votes %> 
+		<br/>
+		Down-votes: <%= post.down_votes %>
+		<br/>
+		<br/>
+
+	<a href="/posts/<%= post.id %>/edit">Edit Post</a>
+	<form action="/posts/<%= post.id %>/delete" method="post">
+		<input type="submit" name="delete post" value="delete" />
+	</form>
+<% end %>
+</div>
+
+<br/><br/>
+
+<a href='/posts/new'>New Post</a>
