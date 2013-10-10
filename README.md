@@ -22,6 +22,11 @@ Use Sinatra and ActiveRecord to make all of this work.
 ### Bonuses
 
 - Attempt to figure out how to require only title/link, or title/body and disallow inputting the three of them. This will be tricky and has multiple solutions
+```
+Leave url blank to submit a question for discussion. If there is no url, the text (if any) will appear at the top of the comments page. If there is a url, the text will be ignored.
+```
+
+
 - Attempt to implement a voting system, which each story has buttons for voting up and down. Display the current total score for each story. Also, display the order of the stories on the index page from most votes to fewest votes.
 - Try to make the CSS look as close to Hacker News as realistically possible. Don't copy or reference their CSS code. 
 
