@@ -1,6 +1,6 @@
 # Sinatra/ActiveRecord Homework #1
 
-Create a basic clone to emulate the functionality of Hacker News. 
+Create a basic clone to emulate the functionality of [Hacker News](https://news.ycombinator.com/). 
 
 You'll want a table of 'stories' that have the following fields:
 
