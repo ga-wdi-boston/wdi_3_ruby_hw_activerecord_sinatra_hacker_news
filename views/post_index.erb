@@ -1,0 +1,28 @@
+<div class="post container">
+  <% @posts.each do |post| %>
+    <a href="/posts/<%= post.id %>"><h2><%= post.title %></h2></a>
+    <h3>Created at <%= post.created_at %></h3>
+    <h4>Link: <%= post.link %></h4>
+  <div class="post-votes">
+    <h4>Up Votes: <%= post.up_votes %></h4>
+    <h4>Down Votes: <%= post.down_votes %></h4>
+  <div class="post-body">
+    <%= post.body  %>
+  </div>
+  <br/>
+
+  <div class="edit post container">
+    <a href="/posts/<%= post.id %>/edit">Edit Post</a>
+  </div>
+  
+
+  <div class="delete post container">
+    <form action="/posts/<%= post.id %>/delete" method="post">
+      <input type="submit" name="Delete Post" value="delete" />
+    </form>
+  </div>
+<% end %>
+
+<div>
+  <a href='/posts/new'>New Benslist Post</a>
+</div>
