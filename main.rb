@@ -41,6 +41,23 @@ get '/posts/:id' do
   erb :post_show
 end
 
+
+post '/posts/:id/upvote' do
+	up_votes = Post.find(params[:id]).up_votes
+	up_votes += 1
+  Post.update(params[:id], :up_votes => up_votes)
+  redirect '/'
+end
+
+
+post '/posts/:id/downvote' do
+	down_votes = Post.find(params[:id]).down_votes
+	down_votes += 1
+  Post.update(params[:id], :down_votes => down_votes)
+  redirect '/'
+end
+
+
 post '/posts/:id/update' do
   Post.update(params[:id], :title => params[:title], :body => params[:body])
   redirect '/'

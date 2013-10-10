@@ -1,22 +1,30 @@
 <% @posts.each do |post| %>
 	<a href="/posts/<%= post.id %>"><h2><%= post.title %></h2></a> 
 
-	<%= post.created_at %>
+	<%= post.created_at.strftime("Created on %m/%d/%Y at %I:%M%p") %>
 		<br/>
 		<%= post.link %>
 		<br/>
 		<%= post.body %>
-		<br/>
-		Up-votes: <%= post.up_votes %> 
-		<br/>
-		Down-votes: <%= post.down_votes %>
-		<br/>
+		<br/><br/>
+		Total Votes: <%= post.up_votes + post.down_votes %>
 		<br/>
 
+	<form action="/posts/<%= post.id %>/upvote" method="post">
+		<input type="submit" name="delete post" value="upvote" />
+	</form>
+
+	<form action="/posts/<%= post.id %>/downvote" method="post">
+		<input type="submit" name="delete post" value="downvote" />
+	</form>	
+
+	<br/>
 	<a href="/posts/<%= post.id %>/edit">Edit Post</a>
 	<form action="/posts/<%= post.id %>/delete" method="post">
 		<input type="submit" name="delete post" value="delete" />
 	</form>
+
+	###############
 <% end %>
 </div>
 
