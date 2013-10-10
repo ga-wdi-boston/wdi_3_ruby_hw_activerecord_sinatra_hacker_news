@@ -30,5 +30,5 @@ Use Sinatra and ActiveRecord to make all of this work.
 Please read the following: 
 
 - [ActiveRecord Query RailsGuide documentation](http://guides.rubyonrails.org/active_record_querying.html)
-- [ActiveRecord::Base documentation](http://api.rubyonrails.org/classes/ActiveRecord/Base.html_)
+- [ActiveRecord::Base documentation](http://api.rubyonrails.org/classes/ActiveRecord/Base.html)
 - [ActiveRecord::Migration documentation](http://api.rubyonrails.org/classes/ActiveRecord/Migration.html)
