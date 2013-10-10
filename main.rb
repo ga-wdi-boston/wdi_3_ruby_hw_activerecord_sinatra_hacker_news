@@ -12,7 +12,7 @@ class Post < ActiveRecord::Base
 end
 
 get '/' do 
-  @posts = Post.all
+  @posts = Post.all.order("up_votes DESC")
   erb :post_index
 end
 

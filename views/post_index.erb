@@ -12,6 +12,7 @@
       <input type="submit" name="Down Vote" value="downvote" />
     </form>
     <h4>Total Votes: <%= post.up_votes - post.down_votes %></h4>
+    <h5>Up Votes (ordering by upvotes): <%= post.up_votes %></h5>
   <div class="post-body">
     <%= post.body  %>
   </div>
@@ -30,5 +31,5 @@
 <% end %>
 
 <div>
-  <a href='/posts/new'>New Benslist Post</a>
+  <a href='/posts/new'>New Post</a>
 </div>
