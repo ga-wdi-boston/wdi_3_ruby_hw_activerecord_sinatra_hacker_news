@@ -12,7 +12,7 @@ class Post < ActiveRecord::Base
 end
 
 get '/' do 
-  @posts = Post.all
+  @posts = Post.all.order("total_votes DESC")
   erb :post_index
 end
 
@@ -45,7 +45,9 @@ end
 post '/posts/:id/upvote' do
 	up_votes = Post.find(params[:id]).up_votes
 	up_votes += 1
-  Post.update(params[:id], :up_votes => up_votes)
+	total_votes = Post.find(params[:id]).total_votes
+	total_votes += 1
+  Post.update(params[:id], :up_votes => up_votes, :total_votes => total_votes)
   redirect '/'
 end
 
@@ -53,7 +55,9 @@ end
 post '/posts/:id/downvote' do
 	down_votes = Post.find(params[:id]).down_votes
 	down_votes += 1
-  Post.update(params[:id], :down_votes => down_votes)
+	total_votes = Post.find(params[:id]).total_votes
+	total_votes -= 1
+  Post.update(params[:id], :down_votes => down_votes, :total_votes => total_votes)
   redirect '/'
 end
 

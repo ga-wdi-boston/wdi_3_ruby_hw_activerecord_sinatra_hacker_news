@@ -7,8 +7,13 @@
 		<br/>
 		<%= post.body %>
 		<br/><br/>
-		Total Votes: <%= post.up_votes + post.down_votes %>
+		Up-Votes: <%= post.up_votes %>
 		<br/>
+		Down-Votes: <%= post.down_votes %>
+		<br/>
+		Total Votes: <%= post.total_votes %>
+
+
 
 	<form action="/posts/<%= post.id %>/upvote" method="post">
 		<input type="submit" name="delete post" value="upvote" />
