@@ -16,9 +16,19 @@ Newslink.create(title: "Azerbaijian Election Results", link: "http://business.fi
 
 
 get '/newslink/' do 
-  @newslinks = Newslink.order("up_votes DESC")
+  @newslinks = Newslink.order("(up_votes - down_votes) DESC")
   erb :index
 end
+
+get '/newslink/submit' do
+	erb :post_new
+end
+
+get '/newslink/recent' do
+	@newslinks = Newslink.order("updated_at DESC")
+	erb :index
+end
+
 
 post '/newslink/new' do
   Newslink.create(title: params[:title], link: params[:link], body: params[:body])

@@ -1,7 +1,7 @@
 
 <% @newslinks.each_with_index do |newslink, index| %>
   <div class="post">
-  <div class="title"><%=(index+1)%>.  <a href="<%=newslink.link%>"><%= newslink.title %></a></div>
+  <%=(index+1)%>.  <a href="<%=newslink.link%>"><%= newslink.title %></a>
 
   <div class="info">
   
@@ -19,4 +19,3 @@
   </div>
 </div>
 <% end %>
-
