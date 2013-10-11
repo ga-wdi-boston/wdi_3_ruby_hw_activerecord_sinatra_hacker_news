@@ -29,7 +29,6 @@ get '/newslink/recent' do
 	erb :index
 end
 
-
 post '/newslink/new' do
   Newslink.create(title: params[:title], link: params[:link], body: params[:body])
   redirect '/newslink/'
