@@ -20,6 +20,11 @@ get '/new' do
 	erb :post_new
 end
 
+get '/:id/edit' do
+  @story = Story.find(params[:id])
+  erb :edit
+end
+
 get '/:id' do 
   @story = Story.find(params[:id])
   erb :show_story
@@ -31,3 +36,28 @@ post '/create' do
                        body: params[:body])
   redirect '/'
 end
+
+post '/:id/update' do 
+  @story = Story.update(params[:id],
+                        title: params[:title],
+                        link: params[:link],
+                        body: params[:body])
+
+  redirect "/"
+end
+
+	# @story = Story.find(params[:id])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
