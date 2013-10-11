@@ -9,6 +9,10 @@ set :database, {adapter: 'postgresql',
                 host: 'localhost'}
 
 class Post < ActiveRecord::Base
+  has_many :comments
+end
+
+class Comment < ActiveRecord::Base
 end
 
 get '/' do 
@@ -52,6 +56,29 @@ get '/posts/:id' do
 	post_id	= params[:id]
   @post = Post.find(params[:id])
   erb :post_show
+end
+
+# /comment/<%= @post.id %>/new
+
+post '/comment/:id/new' do
+  post_id = params[:id]
+  author = params[:author]
+  body = params[:body]
+
+  Post.find(params[:id]).comments.create(:author => author, :body => body)
+  redirect '/'
+end
+
+post '/comment/:id/delete' do
+  Comment.find(params[:id]).destroy
+  redirect '/'
+end
+
+
+post '/comment/:id/upvote' do
+  Comment.increment_counter(:up_votes, params[:id])
+  post_id = Comment.find(params[:id]).post_id
+  redirect '/'
 end
 
 
