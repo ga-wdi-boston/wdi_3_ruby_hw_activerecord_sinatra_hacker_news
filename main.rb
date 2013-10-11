@@ -16,3 +16,17 @@ get '/index' do
 	@posts = Post.all
 	erb :index_posts
 end
+
+get '/index/new' do
+	erb :add_post
+end
+
+post '/index/create' do
+	post = Post.create(link: params[:link],  title: params[:title], body: params[:body])
+	redirect "/home/#{post.id}"
+end
+
+get '/index/:id' do
+	@post = Post.find(params[:id])
+	erb :indiv_post
+end

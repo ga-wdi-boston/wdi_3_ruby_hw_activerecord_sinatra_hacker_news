@@ -1,8 +1,9 @@
+<div class='row'>
 <% @posts.each do |post| %>
-<%= post["title"] %>
-<%= post["link"] %>
+<a href="<%= post["link"] %>"><%= post["title"] %></a>
 <%= post["body"] %>
 <%= post["up_votes"] %>
 <%= post["down_votes"] %>
 <%= post["timestamp"] %>
 <% end %>
+</div>
