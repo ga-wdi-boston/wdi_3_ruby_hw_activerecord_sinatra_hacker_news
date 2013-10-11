@@ -16,6 +16,11 @@ get '/' do
   erb :post_index
 end
 
+get '/index/time' do 
+  @posts = Post.all.order("created_at DESC")
+  erb :post_index
+end
+
 get '/posts/:id/edit' do
   @post = Post.find(params[:id])
   erb :post_edit
