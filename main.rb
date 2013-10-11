@@ -5,17 +5,29 @@ require 'pg'
 require 'sinatra/activerecord'
 
 set :database, {adapter: 'postgresql',
-								database: 'dan_hacker',
+								database: 'danhacker',
 								host: 'localhost'}
-class Post <ActiveRecord::Base
+class Story <ActiveRecord::Base
 end
 
 get '/' do
-	@posts = Post.all
+	@stories = Story.all
 	erb :front_page
 end
 
 # This will be for showing the form to create new posts
 get '/new' do
 	erb :post_new
+end
+
+get '/:id' do 
+  @story = Story.find(params[:id])
+  erb :show_story
+end
+
+post '/create' do 
+  Story.create(title: params[:title], 
+                       link: params[:link], 
+                       body: params[:body])
+  redirect '/'
 end
