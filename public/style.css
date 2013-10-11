@@ -1,0 +1,17 @@
+.container {
+margin:auto;
+width:800px;
+}
+
+.below_story_options {
+
+  background-color: #f54;
+}
+
+.delete {
+  float:right;
+}
+
+a {
+  color: #000;
+}
