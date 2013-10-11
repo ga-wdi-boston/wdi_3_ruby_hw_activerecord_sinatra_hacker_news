@@ -13,21 +13,39 @@ end
 
 get '/' do
   @stories = Story.all 
-  erb :story_index
+  erb :index
 end
 
 get '/new' do 
-  erb :new_story
+  erb :new
 end
 
 post '/create' do 
-  story = Story.create(title: params[:title], 
+  @story = Story.create(title: params[:title], 
                        link: params[:link], 
                        body: params[:body])
-  redirect "/#{story.id}"
+  redirect "/"
 end
 
 get '/:id' do 
   @story = Story.find(params[:id])
-  erb :show_story
+  erb :show
+end
+
+get '/:id/delete' do 
+  Story.delete(params[:id])
+  redirect '/'
+end
+
+get '/:id/edit' do
+  @story = Story.find(params[:id])
+  erb :edit
+end
+
+post '/:id/update' do 
+  @story = Story.update(params[:id],
+                        title: params[:title],
+                        link: params[:link],
+                        body: params[:body])
+  redirect '/'
 end

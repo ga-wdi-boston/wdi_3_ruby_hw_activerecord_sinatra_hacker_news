@@ -1,0 +1,6 @@
+<a href=<%= @story.link.nil? ? <%= "/#{@story.id}" %> : @story.link %>>
+  <h2><%= @story.title %></h2>
+</a>
+<div class="comment">
+  <%= @story.body %>
+</div>
