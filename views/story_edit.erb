@@ -1,0 +1,5 @@
+<form action="/<%=@story.id%>/update" method="post">
+  <input name="title" type="text" value="<%=@story.title%>"></input>
+  <textarea name="body"><%=@story.body%></textarea>
+  <button type="submit">Update a story</button>
+</form>

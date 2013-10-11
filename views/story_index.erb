@@ -1,0 +1,18 @@
+<h1>Welcome to Slacker News</h1>
+<% @stories.each do |story| %>
+ 
+  <h2><a href="/<%= story[:id] %>">Title <%= story.title %></a></h2>
+  <div class="story-body">
+    <%= story.body %>
+  </div>
+  <div></div>
+  <%= story.down_votes %>
+  <%= story.up_votes %>
+ 
+
+<a href="/<%= story["id"] %>/edit">Edit Story</a>
+<form action="<%= story["id"] %>/delete" method="post">
+    <input type="submit"name="delete story" value="delete" />
+  </form>
+<% end %>
+<div><a href="/new">New Story</a></div>
