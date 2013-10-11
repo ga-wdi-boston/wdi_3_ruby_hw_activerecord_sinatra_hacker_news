@@ -12,25 +12,28 @@ img {
 }
 .nav_bar {
 	width: 1000px;
-	margin: 40px;
+	margin-left: 40px;
+	margin-right: 40px;
 	background-color:#ff4500	;
 	display: inline-block;
 }
 
 .row {
 	width: 1000px;
-	margin: 40px;
+	margin-left: 40px;
+	margin-right: 40px;
 	background-color:#faf0e6;
 }
 
 .left_nav {
-	text-align: left;
-	margin-bottom: 6px;
+	float: left;
+
 }
 
 .right_nav {
 	float: right;
-	margin-top: 5px;
+	padding-top: 6px;
+	padding-right: 3px;
 }
 
 
