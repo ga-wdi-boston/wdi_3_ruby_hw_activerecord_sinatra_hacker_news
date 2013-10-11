@@ -1,3 +1,13 @@
+a {
+	text-decoration: none;
+	color: black;
+}
+.nav_bar {
+	margin: auto;
+	background: orange;
+	display: inline;
+}
+
 .row {
 	margin: auto;
 	background: rgb(faf0e6);
