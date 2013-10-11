@@ -14,7 +14,8 @@ a {
 }
 
 .row {
-	margin: auto;
+	width: 1000px;
+	margin: 40px;
 	background-color:#faf0e6;
 }
 
