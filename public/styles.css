@@ -1,0 +1,34 @@
+.passed {
+	margin-top: 20px;
+}
+
+.downvotes {
+	margin-bottom: 20px;
+}
+
+.header {
+	text-align: left;
+	background: #ff622f;
+	margin: 0px auto auto auto;
+	height: 20px;
+	width: 100%
+	float: left;
+	display: inline;
+}
+
+form {
+	margin-bottom: 20px;
+}
+
+h2.a {
+	text-decoration: none;
+	color: white;
+}
+
+ul {
+    padding: 10px;
+    background: #ff622f;
+    }
+li {
+    display: inline;
+    padding: 0px 10px 0px 10px;
