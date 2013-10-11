@@ -1,0 +1,47 @@
+<h2><%= @post.title %></h2>
+<p>
+	<em><%= @post.created_at.strftime("Created on %m/%d/%Y at %I:%M%p") %></em>
+	<br/><br/>
+	Article URL: <%= @post.link %><br/><br/></p>
+
+	<table width="780px">
+		<tr>
+		<td width="100px" valign="top">
+				<p><strong>Up-Votes:  <%= @post.up_votes %><br/>
+					Down-Votes:  <%= @post.down_votes %></strong></p>
+				</td>
+
+				<td valign="top">
+					<div class="buttons">
+						<ul>
+							<li>
+								<form action="/posts/<%= @post.id %>/upvote" method="post">
+									<button type="submit">Upvote</button>
+								</form>
+							</li>
+
+							<li>
+								<form action="/posts/<%= @post.id %>/downvote" method="post">
+									<button type="submit">Downvote</button>
+								</form>
+							</li>
+
+							<li>
+								<form action="/posts/<%= @post.id %>/delete" method="post">
+									<button type="submit">Remove</button>
+								</form>
+							</li>
+
+							<li>
+								<form action="/posts/<%= @post.id %>/edit" method="get">
+									<button type="submit">Edit</button>
+								</form>
+							</li>
+						</ul>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<p style="text-align: justify"><%= @post.body %></span><br/>
+		</p>

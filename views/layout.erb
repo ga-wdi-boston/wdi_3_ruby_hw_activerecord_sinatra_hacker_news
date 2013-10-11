@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blake's Hacker News</title>
+	<link rel="stylesheet" type="text/css" href="/reset.css">
+  	<link rel="stylesheet" type="text/css" href="/style.css">
+  	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+		<table width="780px">
+			<tr>
+			<td align="left" width="20px">
+			<a href="/"><img src="https://news.ycombinator.com/y18.gif"/></a>
+			</td>
+			<td align="left" width="150px"><h5>Hacker News</h5></td>
+			<td width="350px">
+			<h5><a href="/">favorites</a> 
+			<font style="margin-left:25px"><a href="/index/time">newest</a></font></h5> 
+			</td>
+			<td align="right" width="260px"><a href='/posts/new'><h4>submit an article</h4></a></td>
+			</tr>
+		</table>
+		</div>
+		<div class='textContainer'>		
+		<%= yield %>
+		</div>
+	</div>
+
+<h6>Created by Blake Ruddock</h6>
+</body>
+</html>
