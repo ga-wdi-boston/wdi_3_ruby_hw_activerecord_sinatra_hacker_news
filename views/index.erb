@@ -1,0 +1,11 @@
+<% @newslinks.each do |newslink| %>
+<a href="<%=newslink.link%>"><%= newslink.title %></a>
+Up Votes: <%= newslink.up_votes%>
+Down Votes: <%= newslink.down_votes%>
+<form action="/newslink/<%= newslink.id %>/up_vote" method="post">
+  <button name="up_votes" type="submit" value=1>Up Vote</button>
+  </form>
+  <form action="/newslink/<%= newslink.id %>/down_vote" method="post">
+  <button name="down_votes" type="submit" value=-1>Down Vote</button>
+</form>
+<% end %>
