@@ -12,7 +12,7 @@ class Post < ActiveRecord::Base
 end
 
 get '/' do 
-  @posts = Post.all.order("up_votes DESC")
+  @posts = Post.all.order("total_votes DESC")
   erb :post_index
 end
 
@@ -31,8 +31,16 @@ get '/posts/new' do
 end
 
 post '/posts/create' do
-  Post.create(title: params[:title], link: params[:link], body: params[:body], up_votes: 0, down_votes: 0)
-  redirect '/'
+  if params[:link] != "" && params[:body] != ""
+    redirect '/posts/new'
+  elsif params[:link] == "" && params[:body] == ""
+    redirect '/posts/new'
+  elsif params[:link] == "" && params[:body] == ""
+    redirect '/posts/new'
+  else
+    Post.create(title: params[:title], link: params[:link], body: params[:body], up_votes: 0, down_votes: 0)
+    redirect '/'
+  end
 end
 
 get '/posts/:id' do
@@ -43,14 +51,18 @@ end
 post '/posts/:id/upvote' do
   up_votes = Post.find(params[:id]).up_votes
   up_votes += 1
-  Post.update(params[:id], :up_votes => up_votes)
+  total_votes = Post.find(params[:id]).total_votes
+  total_votes += 1
+  Post.update(params[:id], :up_votes => up_votes, :total_votes => total_votes)
   redirect '/'
 end
 
 post '/posts/:id/downvote' do
   down_votes = Post.find(params[:id]).down_votes
   down_votes += 1
-  Post.update(params[:id], :down_votes => down_votes)
+  total_votes = Post.find(params[:id]).total_votes
+  total_votes -= 1
+  Post.update(params[:id], :down_votes => down_votes,  :total_votes => total_votes)
   redirect '/'
 end
 

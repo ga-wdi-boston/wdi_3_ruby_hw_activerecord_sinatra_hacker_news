@@ -1,35 +1,35 @@
-<div class="post container">
+<div class="container">
   <% @posts.each do |post| %>
-    <a href="/posts/<%= post.id %>"><h2><%= post.title %></h2></a>
-    <h4><%= post.created_at.strftime("Created on %m/%d/%y at %I:%M%p") %></h3>
-    <h4>Link: <%= post.link %></h4>
-  <div class="post-votes">
+    <a href="/posts/<%= post.id %>"><h2 class="index-title"><%= post.title %></h2></a>
+    <h3 class="index-title"><%= post.created_at.strftime("Created on %m/%d/%y at %I:%M%p") %>
+    Link: <%= post.link %></h3>
+  <h5>Total Votes: <%= post.total_votes %></h5>
+  <div class="votes">
+  <ul>
+    <li>
     <form action="/posts/<%= post.id %>/upvote" method="post">
-      <input type="submit" name="Up Vote" value="upvote" />
-    </form>
-
+      <input type="submit" name="upvote" value="Up Vote" />
+    </form></li>
+    <li>
     <form action="/posts/<%= post.id %>/downvote" method="post">
-      <input type="submit" name="Down Vote" value="downvote" />
+      <input type="submit" name="downvote" value="Down Vote" />
     </form>
-    <h4>Total Votes: <%= post.up_votes - post.down_votes %></h4>
-    <h5>Up Votes (ordering by upvotes): <%= post.up_votes %></h5>
-  <div class="post-body">
-    <%= post.body  %>
-  </div>
-  <br/>
-
-  <div class="edit post container">
-    <a href="/posts/<%= post.id %>/edit">Edit Post</a>
-  </div>
-  
-
-  <div class="delete post container">
-    <form action="/posts/<%= post.id %>/delete" method="post">
-      <input type="submit" name="Delete Post" value="delete" />
-    </form>
-  </div>
+    </li>
+    <li>
+      <form action="/posts/<%= post.id %>/edit" method="get">
+        <input type="submit" name="editpost" value="Edit Post" />
+      </form>
+    </li>
+    <li>
+      <form action="/posts/<%= post.id %>/delete" method="post">
+        <input type="submit" name="delete" value="Delete" />
+      </form>
+  </li>
+  </ul>
 <% end %>
 
 <div>
   <a href='/posts/new'>New Post</a>
+</div>
+
 </div>
