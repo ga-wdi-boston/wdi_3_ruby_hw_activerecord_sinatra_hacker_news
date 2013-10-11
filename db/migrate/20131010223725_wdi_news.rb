@@ -1,4 +1,4 @@
-class WdiNews < ActiveRecord::Migration
+class WdiNews < ActiveRecord::Migration #should be create
   def up
     create_table :stories do |s|
       s.string :title
@@ -10,7 +10,11 @@ class WdiNews < ActiveRecord::Migration
     end
   end
 
+#for rollback
   def down
-    drop_table :posts
+    drop_table :posts #wrong! should be :stories
   end
 end
+
+
+#if adding columns, creat another file like this, then run: add_colum :new_column, :new_column2 / :remove_column :new_column, new_column2

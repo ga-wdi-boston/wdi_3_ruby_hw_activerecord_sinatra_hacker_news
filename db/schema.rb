@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131010223725) do
+ActiveRecord::Schema.define(version: 20131011162803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: true do |t|
+    t.string   "author"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "story_id"
+    t.integer  "comment_upvotes", default: 0
+  end
 
   create_table "stories", force: true do |t|
     t.string   "title"

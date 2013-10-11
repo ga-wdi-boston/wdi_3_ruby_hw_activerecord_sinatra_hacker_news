@@ -18,22 +18,26 @@ html {
 	height: 18px;
 }
 
-.content a {
+.content a, #comments p {
 	font-size: 13px;
 	color: black;
 	text-decoration: none;
+}
+
+#comments p {
+	margin-top: 3px;
 }
 
 .content a:visited {
 	color: #908982;
 }
 
-.time, .time a {
+.small_gray, .small_gray a {
 	font-size: 9px;
 	color: #908982;
 }
 
-.time a:hover {
+.small_gray a:hover {
 	text-decoration: underline;
 }
 
@@ -41,9 +45,11 @@ html {
 	margin-right: 15px;
 }
 
-#wdinews {
+#wdinews a {
 	font-weight: bold;
+	color: #000000;
 	font-size: 14px;
+	text-decoration: none;
 }
 
 #menu, #menu a {
