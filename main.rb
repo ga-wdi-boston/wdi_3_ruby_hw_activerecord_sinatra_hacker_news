@@ -15,7 +15,7 @@ Newslink.create(title: "Hermione Granger Loses it", link: "https://github.com/zd
 Newslink.create(title: "Azerbaijian Election Results", link: "http://business.financialpost.com/2013/10/10/")
 
 
-get '/newslink/' do 
+get '/newslink/' do
   @newslinks = Newslink.order("(up_votes - down_votes) DESC")
   erb :index
 end
@@ -44,7 +44,7 @@ get '/newslink/:id/edit' do
   erb :post_edit
 end
 
-post '/newslink/:id/delete' do
+get '/newslink/:id/delete' do
   Newslink.delete(params[:id])
   redirect '/newslink/'
 end
@@ -55,6 +55,13 @@ post '/newslink/:id/update' do
   updated.link = params[:link]
   updated.body = params[:body]
   updated.save
+  redirect "/newslink/"
+end
+
+get '/newslink/:id/flag' do
+  flagged_post = Newslink.find(params[:id])
+  flagged_post.flagged = true
+  flagged_post.save
   redirect "/newslink/"
 end
 

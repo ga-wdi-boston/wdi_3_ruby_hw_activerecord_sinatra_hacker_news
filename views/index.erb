@@ -1,11 +1,15 @@
 
 <% @newslinks.each_with_index do |newslink, index| %>
+<% if newslink.flagged == false%>
   <div class="post">
   <div class="title"><%=(index+1)%>.  <a href="<%=newslink.link%>"><%= newslink.title %></a></div>
 
   <div class="info">
   
-  <% points = newslink.up_votes + newslink.down_votes %> <%=points%> points; created at <%=newslink.created_at%>
+  <% points = newslink.up_votes + newslink.down_votes %> <%=points%> points | created at <%=newslink.created_at%> | 
+  <a href="/newslink/<%= newslink.id %>/edit">EDIT</a> | 
+  <a href="/newslink/<%= newslink.id %>/delete">DELETE</a> |
+  <a href="/newslink/<%= newslink.id %>/flag">FLAG POST</a>
   </div>
   
   <div class="voting">  
@@ -18,5 +22,6 @@
     </form>
   </div>
 </div>
+  <% end %>
 <% end %>
 
