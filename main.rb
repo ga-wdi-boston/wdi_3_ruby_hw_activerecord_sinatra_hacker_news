@@ -33,7 +33,7 @@ post '/hackernews/:id/update' do
 	redirect "/hackernews/#{params[:id]}"
 end
 
-post '/hackernews/:id/delete' do
+get '/hackernews/:id/delete' do
 	Story.find(params[:id]).delete
 	redirect '/hackernews'
 end
