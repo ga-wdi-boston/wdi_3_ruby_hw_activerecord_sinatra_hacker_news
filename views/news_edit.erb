@@ -1,6 +1,6 @@
-<form action="/hacknews/<%=@story.id%>/update" method='post'>
-	<input name="title" type="text"/>
-	<textarea name="text"></textarea>
+<form action="/hacknews/<%= @story.id %>/update" method='post'>
+	<div class ='titles'><h3>Title</h3><input name="title" type="text" value="<%= @story.title %>"/></div>
+	<div class = 'titles'><h3>New link or text:</h3><textarea name="text" cols="20" rows="5"><%=@story.body%></textarea>
 	<button type="submit">Submit your edits Post</button>
 </form>
 

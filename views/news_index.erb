@@ -1,20 +1,37 @@
-<% @stories.each do |story| %>	
+<div class = 'content'>
+	<div class ='New links'>
+	<div><a href="/hacknews/new/link">Share your new link!</a></div>
+	<div><a href="/hacknews/new/text">Share your new story!</a></div> </div>
 
-<div><a href="<%=story.link%>" target ="_blank"><h3><%=story.title%></h3></a></div>
+			<% @stories.each do |story| %>	
 
-
-<a href="/hacknews/<%= story.id %>/edit">EDIT</a>
-
-<div class = 'buttons' ><form action="/hacknews/<%= story.id %>/delete" method="post">
-	<input type="submit" name="Delete" value="delete" />
-</form></div>
-
-<div><a href="/hacknews/new/link">Share your new link!</a></div>
-<div><a href="/hacknews/new/text">Share your new story!</a></div>
-
-<% end %>
+	<div><a href="<%=story.link%>" target ="_blank"><h3><%=story.title%></h3></a></div>
 
 
+	<a href="/hacknews/<%= story.id %>/edit">EDIT</a>
+
+	<div class = 'buttons' ><form action="/hacknews/<%= story.id %>/delete" method="post">
+		<input type="submit" name="Delete" value="delete" />
+	</form></div>
+	<div class = 'buttons' ><form action="/hacknews/<%= story.id %>/voteup" method="post">
+		<input type="submit" name="Vote up!" value="add vote" />
+	</form></div>
+	<div class = 'votes'><p>Up Votes!</p><%=story.up_votes%></div>
+
+	<div class = 'buttons' ><form action="/hacknews/<%= story.id %>/votedown" method="post">
+		<input type="submit" name="Vote down!" value="minus vote" />
+	</form></div>
+	<div class = 'votes'><p>Down Votes!</p><%=story.down_votes%></div>
+	<div> 
+		<h3>Post comments:</h3>
+		<ul>
+			<li></li>
+		</ul>
+	</div>
+	<a href="/hacknews/<%= story.id %>/newcomment">ADD COMMENT</a>
+	<div class='timestamp'><p>Link submitted:</p><%=story.created_at%></div>
+	<% end %>
+</div>
 
 
 

@@ -7,10 +7,9 @@ class CreateHackernews < ActiveRecord::Migration
   		t.text :body
   		t.integer :up_votes
   		t.integer :down_votes
-  		t.timestamps
+  		t.timestamps :created_at
   	end
   end
-
 
   def down
   	drop_table :stories
