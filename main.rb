@@ -9,11 +9,20 @@ set :database, {adapter: 'postgresql',
 				host: 'localhost'}
 
 class Newslink < ActiveRecord::Base
+  has_many :comments
 end
 
-Newslink.create(title: "Hermione Granger Loses it", link: "https://github.com/zdavison/NSString-Ruby")
-Newslink.create(title: "Azerbaijian Election Results", link: "http://business.financialpost.com/2013/10/10/")
+class Comment < ActiveRecord::Base
+end
 
+binding.pry
+
+
+# Newslink.create(title: "Release of Wikileaks internal memo", link: "http://wikileaks.org/IMG/html/wikileaks-dreamworks-memo.html")
+# Newslink.create(title: "Millions in Asia still on Windows XP", link: "http://visual.ly/millions-asia-still-windows-xp")
+# Newslink.create(title: "Demands on Lavabit violated fourth amendment", link: "http://www.theguardian.com/technology/2013/oct/11/fbi-demands-lavabit-violated-fourth-amendment-levison")
+# Newslink.create(title: "Iconic: Advanced Icons for the Modern Web", link: "http://useiconic.com/")
+# Newslink.create(title: "Schneier on Security", link: "https://www.schneier.com/blog/archives/2013/10/air_gaps.html")
 
 get '/newslink/' do
   @newslinks = Newslink.order("(up_votes - down_votes) DESC")
@@ -47,6 +56,11 @@ end
 get '/newslink/:id/delete' do
   Newslink.delete(params[:id])
   redirect '/newslink/'
+end
+
+get '/newslink/:id/comments' do
+  @newslink = Newslink.find(params[:id])
+  post_show.erb
 end
 
 post '/newslink/:id/update' do

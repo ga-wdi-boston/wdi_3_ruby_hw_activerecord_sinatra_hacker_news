@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131011135307) do
+ActiveRecord::Schema.define(version: 20131011153649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: true do |t|
-    t.string   "author",     default: "anonymous"
+    t.string   "author",      default: "anonymous"
     t.text     "body"
-    t.integer  "story_id"
-    t.integer  "up_votes",   default: 0
-    t.integer  "down_votes", default: 0
+    t.integer  "up_votes",    default: 0
+    t.integer  "down_votes",  default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "newslink_id"
   end
 
   create_table "newslinks", force: true do |t|
