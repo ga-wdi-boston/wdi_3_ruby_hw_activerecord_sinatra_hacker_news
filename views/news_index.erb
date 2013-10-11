@@ -1,0 +1,27 @@
+<% @stories.each do |story| %>
+	
+<div
+
+
+
+	<a href="<%= story.id %>"><h2><%= story.title %></h2></a>
+	<div class="post-body"><%= post.body %></div>
+
+
+
+
+<% end %>
+<a href="/hacknews/news">Share your new story!</a>
+
+
+
+
+# - title
+# - link
+# - body
+# - up_votes
+# - down_votes
+# - timestamps
+
+# The user will only submit either title/link, or title/body. `up_votes` and `down_votes` will be set at zero by default. Unless attempting the bonus, don't implement voting and leave them at zero.
+
