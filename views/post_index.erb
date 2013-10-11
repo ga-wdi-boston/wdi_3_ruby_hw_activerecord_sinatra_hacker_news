@@ -1,42 +1,38 @@
 <% @posts.each do |post| %>
-	<a href="/posts/<%= post.id %>"><h2><%= post.title %></h2></a> 
+	<hr>
+	<a href="/posts/<%= post.id %>"><h3><%= post.title %></h3></a> 
+	<table width="760px">
+	<tr>
+		<td width="100px"><h3 style="font-size:14px"><%= post.total_votes %> points</h3></td>
+		<td align="left" width="250px"><h3 style="font-weight:normal; font-size:13px"><%= post.created_at.strftime("Created %m/%d/%Y @ %I:%M%p") %></h3></td>
+		<td>	
+			<div class="buttons">	
+			<font style="font-size:10px">
+			<ul>
+			<li>
+			<form action="/posts/<%= post.id %>/upvote" method="post">
+				<button type="submit">upvote (<%= post.up_votes %>)</button>
+			</form>
+			</li>
+			<li>
+			<form action="/posts/<%= post.id %>/downvote" method="post">
+				<button type="submit">downvote (<%= post.down_votes %>)</button>
+			</form>
+			</li>
+			<li>
+			<form action="/posts/<%= post.id %>/delete" method="post">
+				<button type="submit">remove</button>
+			</form>
+			</li>
+			<li>
+			<form action="/posts/<%= post.id %>/edit" method="get">
+				<button type="submit">edit</button>
+			</form>
+			</li>
+			</ul>
+			</font>
+		</td>
+	</tr>
+	</table>
 
-	<%= post.created_at.strftime("Created on %m/%d/%Y at %I:%M%p") %>
-		<br/>
-		<%= post.link %>
-		<br/>
-		Up-Votes: <%= post.up_votes %>
-		<br/>
-		Down-Votes: <%= post.down_votes %>
-		<br/>
-		Total Votes: <%= post.total_votes %>
-
-
-	<div class="buttons">
-	<ul>
-		<li>
-		<form action="/posts/<%= post.id %>/upvote" method="post">
-			<input type="submit" name="delete post" value="upvote" />
-		</form>
-		</li>
-
-		<li>
-		<form action="/posts/<%= post.id %>/downvote" method="post">
-			<input type="submit" name="delete post" value="downvote" />
-		</form>
-		</li>	
-
-		<li>
-		<form action="/posts/<%= post.id %>/delete" method="post">
-			<input type="submit" name="delete post" value="delete" />
-		</form>
-		</li>
-
-		<li>
-		<form action="/posts/<%= post.id %>/edit" method="get">
-			<input type="submit" name="edit post" value="edit" />
-		</form>
-		</li>
-	</ul>
-	</div>
 	<% end %>

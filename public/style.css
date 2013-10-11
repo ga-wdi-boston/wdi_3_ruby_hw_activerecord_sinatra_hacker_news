@@ -30,6 +30,10 @@
 	margin-left: 20px;
 }
 
+.line-height {
+	line-height: 10px
+}
+
 input {
 
 	color: #781351;
@@ -87,7 +91,8 @@ h2 {
 }
 
 h3 {
-	font-size: 14px;
+	font-family: verdana;
+	font-size: 18px;
 	text-align: left;
 	margin-left: 0px;
 }
