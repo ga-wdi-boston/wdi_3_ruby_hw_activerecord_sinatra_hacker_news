@@ -31,8 +31,16 @@ get '/posts/new' do
 end
 
 post '/posts/create' do
-  Post.create(title: params[:title], link: params[:link], body: params[:body], up_votes: 0, down_votes: 0)
-  redirect '/'
+  if params[:link] != "" && params[:body] != ""
+    redirect '/posts/new'
+  elsif params[:link] == "" && params[:body] == ""
+    redirect '/posts/new'
+  elsif params[:link] == "" && params[:body] == ""
+    redirect '/posts/new'
+  else
+    Post.create(title: params[:title], link: params[:link], body: params[:body], up_votes: 0, down_votes: 0)
+    redirect '/'
+  end
 end
 
 get '/posts/:id' do

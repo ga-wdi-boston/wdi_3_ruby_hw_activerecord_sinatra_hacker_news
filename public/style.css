@@ -1,0 +1,21 @@
+.container {
+	width: 85%;
+	margin: 30px auto 30px auto;
+	background-color: #EEEEEE;
+	padding: 20px;
+}
+
+h1 {
+	font-family: Lobster;
+	text-align: center;
+	font-size: 36px;
+}
+
+h2 {
+	font-size: 20px;
+	text-align: left;
+}
+
+.buttons li {
+	display: inline-block;
+}
