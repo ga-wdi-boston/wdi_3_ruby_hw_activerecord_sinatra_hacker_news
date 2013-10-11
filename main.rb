@@ -41,7 +41,7 @@ end
 
 post '/hackernews/:id/update' do
 	Post.update(params[:id], title: params[:title], link: params[:link], body: params[:body])
-	redirect '/hackernews/:id/edit'
+	redirect '/hackernews'
 end
 
 
