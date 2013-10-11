@@ -1,0 +1,64 @@
+body {font-family: sans-serif;}
+
+.header-box {
+	color: black;
+	background-color: rgba(255, 103, 0, 1.0000);
+	margin: 5px 40px 5px 40px;
+	padding-left: 20px;
+
+}
+
+.info {
+	margin-left: 20px;
+}
+
+.header-box a:visited {
+	color: black;
+}
+
+.inline-title {
+	font-weight: bold;
+	font-size: 14px;
+	display: inline;
+}
+
+.title {
+	text-decoration: none;
+	color: rgba(154, 154, 154, 1.0000);
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.title a:visited {
+	text-decoration: none;
+	color: rgba(154, 154, 154, 1.0000);
+}
+
+
+.inline {
+	display: inline;
+	font-size: 12px;
+}
+
+.post {
+	background-color: rgba(246, 247, 239, 1.0000);
+	font-size: 12px;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.add-new-post-box {
+	background-color: rgba(246, 247, 239, 1.0000);
+	font-size: 12px;
+	margin-left: 40px;
+	margin-right: 40px;
+	padding: 20px;
+}
+
+.info {
+	color: rgba(130, 130, 164, 1.0000);
+	font-size: 8px;
+}

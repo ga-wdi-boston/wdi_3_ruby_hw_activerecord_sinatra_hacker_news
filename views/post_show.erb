@@ -1,0 +1,19 @@
+<div><h2><%=@newslink.title%></h2></div>
+
+<% @newslink.comments.each do |comment| %>
+<div><p><%= comment.body %></p></div>
+<div><p>posted by <%= comment.author %> on <%= comment.created_at %> | 
+       <%= comment.up_votes - comment.down_votes %> points | 
+  <a href="/newslink/<%= @newslink.id %>/<%= comment.id %>/edit-comment">EDIT</a> | 
+  <a href="/newslink/<%= @newslink.id %>/<%= comment.id %>/delete-comment">DELETE</a> |
+  </p></div>
+<% end %>
+
+<div class="add-new-comment-box">
+  <h2>Add a comment:</h2>
+    <form action="/newslink/<%= @newslink.id%>/add-comment" method="post">
+      <div>Your name: <input type="text" name="author" ></div>
+      <div>Your comment: <input type="text" name="body" ></div>
+      <button type="submit">Add your comment</button>
+    </form>
+</div>
