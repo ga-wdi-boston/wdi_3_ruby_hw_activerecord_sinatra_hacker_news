@@ -23,7 +23,7 @@ end
 
 post '/index/create' do
 	post = Post.create(link: params[:link],  title: params[:title], body: params[:body])
-	redirect "/home/#{post.id}"
+	redirect "/index/#{post.id}"
 end
 
 get '/index/:id' do
