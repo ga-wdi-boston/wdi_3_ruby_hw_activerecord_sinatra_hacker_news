@@ -5,7 +5,11 @@ a {
 	text-decoration: none;
 	color: black;
 }
-
+img {
+	border: 1px solid white;
+	margin-left: 3px;
+	margin-top: 3px;
+}
 .nav_bar {
 	width: 1000px;
 	margin: 40px;
@@ -18,6 +22,18 @@ a {
 	margin: 40px;
 	background-color:#faf0e6;
 }
+
+.left_nav {
+	text-align: left;
+	margin-bottom: 6px;
+}
+
+.right_nav {
+	float: right;
+	margin-top: 5px;
+}
+
+
 
 /*.full-column {
 	margin: auto;
