@@ -1,4 +1,4 @@
-# Sinatra/ActiveRecord Homework #1
+## Sinatra/ActiveRecord Homework #1
 
 Create a basic clone to emulate the functionality of Hacker News. 
 

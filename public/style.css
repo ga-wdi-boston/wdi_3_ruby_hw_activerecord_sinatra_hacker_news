@@ -11,17 +11,17 @@ img {
 	margin-top: 3px;
 }
 .nav_bar {
-	width: 1000px;
-	margin-left: 40px;
-	margin-right: 40px;
-	background-color:#ff4500	;
+	width: 1250px;
+	margin-right: 50px;
+	margin-left: 50px;
+	background-color:#ff4500;
 	display: inline-block;
 }
 
 .row {
-	width: 1000px;
-	margin-left: 40px;
-	margin-right: 40px;
+	width: 1250px;
+	margin-right: 50px;
+	margin-left: 50px;
 	background-color:#faf0e6;
 }
 
