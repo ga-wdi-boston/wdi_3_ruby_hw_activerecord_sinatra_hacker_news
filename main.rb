@@ -26,5 +26,6 @@ post '/story/create' do
   redirect '/'
 end
 
-get '/story/:id'
+get '/story/:id' do
+	
 end
