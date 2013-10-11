@@ -1,11 +1,16 @@
+body {
+	font-family: sans-serif;
+}
 a {
 	text-decoration: none;
 	color: black;
 }
+
 .nav_bar {
-	margin: auto;
+	width: 1000px;
+	margin: 40px;
 	background-color:#ff4500	;
-	display: inline;
+	display: inline-block;
 }
 
 .row {
@@ -13,8 +18,8 @@ a {
 	background-color:#faf0e6;
 }
 
-.full-column {
+/*.full-column {
 	margin: auto;
 	width: 1000px;
 	background-color:#faf0e6;
-}
+}*/

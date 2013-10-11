@@ -1,5 +1,5 @@
 <div class='nav_bar'>
-	Hacker News
+	<strong>Hacker News</strong>
 	<a href="/index/new">new | </a>
 	<a href="/index">threads | </a>
 	<a href="/index/new">comments | </a>
@@ -8,7 +8,7 @@
 	<a href="/index/new">submit</a>
 </div>
 
-<div class='full_column'>
+<div class='row'>
 	<% @posts.each do |post| %>
 	<a href="<%= post["link"] %>"><%= post["title"] %></a>
 	<p><%= post["up_votes"] %>	
