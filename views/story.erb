@@ -1,5 +1,8 @@
-<div class="title"><%= @story.title %></div>
-<div class="url"><%= @story.url %></div>
-<div class="body"><%= @story.body %></div>
-<div class="upvotes"><%= @story.upvotes %></div>
-<div class="downvotes"><%= @story.downvotes %></div>
+<div class="title">Title: <%= @story.title %></div>
+<div class="url">URL: <%= @story.url %></div>
+<div class="body">Body: <%= @story.body %></div>
+<div class="upvotes">Upvotes: <%= @story.upvotes %></div>
+<div class="downvotes">Downvotes: <%= @story.downvotes %></div>
+
+<form action="/hackernews/<%= @story["id"] %>/delete" method="post"><input type="submit" name="delete story" value="delete" />
+</form>

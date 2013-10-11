@@ -13,6 +13,7 @@ end
 
 get '/hackernews' do
 	@stories = Story.all
+	@stories.order("upvotes DESC")
 	erb :index	
 end
 
@@ -32,7 +33,6 @@ post '/hackernews/:id/update' do
 	redirect "/hackernews/#{params[:id]}"
 end
 
-
 post '/hackernews/:id/delete' do
 	Story.find(params[:id]).delete
 	redirect '/hackernews'
@@ -43,9 +43,7 @@ get '/hackernews/new' do
 end
 
 get '/hackernews/:id' do
-	story_id = params[:id]
-	@stories = Story.all
-	@story = Story.find(story_id)
+	@story = Story.find(params[:id])
 
 	erb :story
 end
@@ -54,17 +52,22 @@ post '/hackernews/create' do
 	title = params[:title]
 	url = params[:url]
 	body = params[:body]
-	upvotes = params[:upvotes]
-	downvotes = params[:downvotes]
 	@stories = Story.all
-	@story = Story.create(title: title, url: url, body: body, upvotes: upvotes, downvotes: downvotes)
+	@story = Story.create(title: title, url: url, body: body, upvotes: 0, downvotes: 0)
 
 	redirect '/hackernews'
 end
 
 post '/hackernews/:id/upvotes' do
 	upvoted = Story.find(params[:id])
-	upvoted.upvotes += 1
+	upvoted[:upvotes] += 1
 	upvoted.save
+	redirect "/hackernews"
+end
+
+post '/hackernews/:id/downvotes' do
+	downvoted = Story.find(params[:id])
+	downvoted[:downvotes] += 1
+	downvoted.save
 	redirect "/hackernews"
 end
