@@ -1,18 +1,31 @@
+<div class="container">
 <h1>Welcome to Slacker News</h1>
+
 <% @stories.each do |story| %>
  
-  <h2><a href="/<%= story[:id] %>">Title <%= story.title %></a></h2>
+ <!-- the following code is displaying the title of the story based on the title of the story in the table, as well as directing the link to specific id page. -->
+  <h2 class="story_title"><a href="/<%= story[:id] %>"><%= story.title %></a></h2>
+
+<!-- this text body is received from the story.body active record value in the ruby file -->
+
   <div class="story-body">
     <%= story.body %>
   </div>
-  <div></div>
+  <div class="below_story_options">
+
   <%= story.down_votes %>
   <%= story.up_votes %>
- 
 
-<a href="/<%= story["id"] %>/edit">Edit Story</a>
-<form action="<%= story["id"] %>/delete" method="post">
-    <input type="submit"name="delete story" value="delete" />
-  </form>
+  <a href="/<%= story["id"] %>/edit">Edit Story</a>
+
+  <form action="<%= story["id"] %>/delete" method="post" >
+
+      <input type="submit"name="delete story" value="delete" class="delete" />
+
+    </form>
+  </div> <!--ending below_story_options -->
+
 <% end %>
-<div><a href="/new">New Story</a></div>
+
+  <div><a href="/new">New Story</a></div>
+<div>
