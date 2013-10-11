@@ -1,0 +1,59 @@
+html {
+	font-family: Verdana;
+}
+
+#container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.content {
+	background-color: #f6f6ef;
+	padding: 10px;
+}
+
+#head {
+	background-color: #ff6600;
+	padding: 3px;
+	height: 18px;
+}
+
+.content a {
+	font-size: 13px;
+	color: black;
+	text-decoration: none;
+}
+
+.content a:visited {
+	color: #908982;
+}
+
+.time, .time a {
+	font-size: 9px;
+	color: #908982;
+}
+
+.time a:hover {
+	text-decoration: underline;
+}
+
+#head span {
+	margin-right: 15px;
+}
+
+#wdinews {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#menu, #menu a {
+	font-size: 12px;
+	color: black;
+	text-decoration: none;
+}
+
+li {
+	font-size: 12px;
+	color: #908982;
+	margin-bottom: 7px;
+}

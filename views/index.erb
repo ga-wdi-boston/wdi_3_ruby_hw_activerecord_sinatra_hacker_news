@@ -1,0 +1,8 @@
+<ol>
+	<% @stories.order(:up_votes).reverse.each do |story| %>
+		<li>
+			<a href="<%= story.link %>"><%= story.title %></a><br />
+			<span class='time'><a href="/upvote/<%= story.id %>"><img src="https://news.ycombinator.com/grayarrow.gif" alt="up arrow" /></a><span><%= story.up_votes %></span> | <%= story.created_at %> | <a href="/<%= story.id %>/delete">DELETE</a> | <a href="/<%= story.id %>/edit">EDIT</a></span>
+		</li>
+	<% end %>
+</ol>
