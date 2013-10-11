@@ -4,17 +4,17 @@ a {
 }
 .nav_bar {
 	margin: auto;
-	background: orange;
+	background-color:#ff4500	;
 	display: inline;
 }
 
 .row {
 	margin: auto;
-	background: rgb(faf0e6);
+	background-color:#faf0e6;
 }
 
 .full-column {
 	margin: auto;
-	width: 900px;
-	background: rgb(faf0e6);
+	width: 1000px;
+	background-color:#faf0e6;
 }

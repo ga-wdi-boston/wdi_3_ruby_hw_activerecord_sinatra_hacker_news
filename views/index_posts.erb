@@ -8,11 +8,11 @@
 	<a href="/index/new">submit</a>
 </div>
 
-<div class='row'>
-<% @posts.each do |post| %>
-<a href="<%= post["link"] %>"><%= post["title"] %></a>
-<p><%= post["up_votes"] %>
-<%= post["down_votes"] %>
-<%= post["timestamp"] %>
-<% end %>
+<div class='full_column'>
+	<% @posts.each do |post| %>
+	<a href="<%= post["link"] %>"><%= post["title"] %></a>
+	<p><%= post["up_votes"] %>	
+	<%= post["down_votes"] %>
+	<%= post["timestamp"] %></p>
+	<% end %>
 </div>
