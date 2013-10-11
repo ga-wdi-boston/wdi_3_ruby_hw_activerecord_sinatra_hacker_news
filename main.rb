@@ -23,6 +23,11 @@ get '/hackernews/:id' do
 	erb :post_show
 end
 
+get '/hackernews/:id/edit' do
+	@post = Post.find(params[:id])
+	erb :post_edit
+end
+
 # This should be run by hitting the submit button on the /new page. <form action='hackernews/create' method='post'>COLLECT CONTENT</form>
 post '/hackernews/create' do
 	post = Post.create(title: params[:title], link: params[:link], body: params[:body], up_votes: 0, down_votes: 0)
@@ -35,15 +40,9 @@ post '/hackernews/:id/destroy' do
 end
 
 post '/hackernews/:id/update' do
-	title = params[:title]
-	link = params[:link]
-	body = params[:body]
-	Post.find(params[:id]).update(title: title, link: link, body: body)
-	redirect '/hackernews/:id'
+	Post.update(params[:id], title: params[:title], link: params[:link], body: params[:body])
+	redirect '/hackernews/:id/edit'
 end
 
-get '/hackernews/:id/edit' do
-	@post = Post.find(params[:id])
-	erb :post_edit
-end
+
 

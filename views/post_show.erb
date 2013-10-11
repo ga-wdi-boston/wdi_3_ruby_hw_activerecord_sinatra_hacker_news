@@ -1,8 +1,8 @@
-<a href="/hackernews/<%= @post.id %>"><h2><%= @post.title %></h2></a>
+<h2><%= @post.title %></h2>
 <div class="link"><p><%= @post.link %></p></div>
 <div class="post-body"><%= @post.body %></div>
 
-<form action="/hackernews/<%= @post.id %>/edit" method="post">
+<form action="/hackernews/<%= @post.id %>/update" method="post">
 	<button type="submit">Edit Post</button>
 </form>
 
