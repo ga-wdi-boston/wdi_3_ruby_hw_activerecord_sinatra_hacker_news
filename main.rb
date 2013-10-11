@@ -9,10 +9,22 @@ set :database, {adapter:'postgresql',
   				database: 'ga-class-posts',
   				host: 'localhost'}
 
-class Post < ActiveRecord::Base
+class Story < ActiveRecord::Base
 end  
 
 get '/' do 
-'Hello'
-	
+	@stories = Story.all
+	erb :stories_index
+end
+
+get '/story/new' do 
+	erb :stories_new
+end
+
+post '/story/create' do
+  Story.create(title: params[:title])
+  redirect '/'
+end
+
+get '/story/:id'
 end

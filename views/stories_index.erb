@@ -1,0 +1,12 @@
+<% @stories.each do |story| %>
+
+<p>title <%= story.title %></p>
+<p>body <%= story.body %></p>
+<p>link <%= story.link %></p>
+<p>upvotes <%= story.up_votes %></p>
+<p>downvotes <%= story.down_votes %></p>
+<p>created at <%= story.created_at %></p>
+<% end %>
+
+<a href="https://news.ycombinator.com/">HACKA NEWz</a>
+
