@@ -1,8 +1,77 @@
 .container {
-	width: 85%;
-	margin: 30px auto 30px auto;
-	background-color: #EEEEEE;
+	width: 800px;
+	margin: 30px auto 25px auto;
+	background-color: #f6f6ef;
+}
+
+.header {
+	width: 780px;
+	padding: 0px 10px 0px 10px;
+	background-color: #FF6600;
+}
+
+.header img{
+	margin: 0;
+	display: inline;
+	float: left;
+	border: 1px solid white;
+}
+
+.textContainer {
 	padding: 20px;
+}
+
+
+.buttons li {
+	display: inline-block;
+}
+
+.fieldset {
+	margin-left: 20px;
+}
+
+input {
+
+	color: #781351;
+	background: #fee3ad;
+	border: 1px solid #781351;
+}
+
+
+textarea {
+
+	color: #781351;
+	background: #fee3ad;
+	border: 1px solid #781351;
+}
+
+
+label {
+	width: 30px;
+	float: left;
+	margin-right: 10px;
+	display: block;
+	font-family: verdana;
+	font-weight: normal;
+	font-size: 14px;
+	text-align: left;
+	color: #000;
+}
+
+button {
+	color: #000;
+	background: #FF6600;
+	border: 2px outset #FF6600;
+	font-family: verdana;
+	font-weight: bold;
+	text-align: left;
+	font-size: 14px;
+	display: inline-block;
+	margin: 0px;
+}
+
+.button_margin {
+	margin-left: 60px;
 }
 
 h1 {
@@ -12,10 +81,54 @@ h1 {
 }
 
 h2 {
+	font-family: verdana;
 	font-size: 20px;
 	text-align: left;
 }
 
-.buttons li {
-	display: inline-block;
+h3 {
+	font-size: 14px;
+	text-align: left;
+	margin-left: 0px;
+}
+
+h4 {
+	font-family: verdana;
+	font-weight: normal;
+	text-align: right;
+	font-size: 12px;
+	margin: 0 10px 0 10px;
+	color: #000;
+}
+
+h5 {
+	font-family: verdana;
+	font-weight: strong;
+	text-align: left;
+	font-size: 12px;
+	margin: 10px;
+	color: #000;
+}
+
+h6 {
+	font-family: verdana;
+	margin-top: 0px;
+	font-weight: bold;
+	font-size: 10px;
+	text-align: center;
+	color: #000;
+}
+
+p {
+	font-family: verdana;
+	font-weight: normal;
+	text-align: left;
+	font-size: 12px;
+	margin: 10px 0px 10px 0px;
+	color: #000;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
 }

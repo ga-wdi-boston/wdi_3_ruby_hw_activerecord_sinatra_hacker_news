@@ -1,10 +1,3 @@
-<div class="container">
-
-<a href='/posts/new'>New Post</a>
-
-<h1>HackerNews</h1>
-
-
 <% @posts.each do |post| %>
 	<a href="/posts/<%= post.id %>"><h2><%= post.title %></h2></a> 
 
@@ -12,13 +5,12 @@
 		<br/>
 		<%= post.link %>
 		<br/>
-		<%= post.body %>
-		<br/><br/>
 		Up-Votes: <%= post.up_votes %>
 		<br/>
 		Down-Votes: <%= post.down_votes %>
 		<br/>
 		Total Votes: <%= post.total_votes %>
+
 
 	<div class="buttons">
 	<ul>
@@ -46,7 +38,5 @@
 		</form>
 		</li>
 	</ul>
-
+	</div>
 	<% end %>
-
-</div>

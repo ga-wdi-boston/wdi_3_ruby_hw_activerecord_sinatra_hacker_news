@@ -2,11 +2,28 @@
 <html>
 <head>
 	<title>Blake's Hacker News</title>
-	<link rel="stylesheet" type="text/css" href="reset.css">
-  	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="/reset.css">
+  	<link rel="stylesheet" type="text/css" href="/style.css">
   	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<%= yield %>
+	<div class="container">
+		<div class="header">
+		<table width="780px">
+			<tr>
+			<td align="left" width="20px">
+			<a href="/"><img src="https://news.ycombinator.com/y18.gif"/></a>
+			</td>
+			<td align="left" width="200px"><h5>Hacker News</h5></td>
+			<td align="right" width="560px"><a href='/posts/new'><h4>submit an article</h4></a></td>
+			</tr>
+		</table>
+		</div>
+		<div class='textContainer'>		
+		<%= yield %>
+		</div>
+	</div>
+
+<h6>Created by Blake Ruddock</h6>
 </body>
 </html>
