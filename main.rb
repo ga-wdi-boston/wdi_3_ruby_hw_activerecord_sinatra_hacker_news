@@ -15,9 +15,6 @@ end
 class Comment < ActiveRecord::Base
 end
 
-binding.pry
-
-
 # Newslink.create(title: "Release of Wikileaks internal memo", link: "http://wikileaks.org/IMG/html/wikileaks-dreamworks-memo.html")
 # Newslink.create(title: "Millions in Asia still on Windows XP", link: "http://visual.ly/millions-asia-still-windows-xp")
 # Newslink.create(title: "Demands on Lavabit violated fourth amendment", link: "http://www.theguardian.com/technology/2013/oct/11/fbi-demands-lavabit-violated-fourth-amendment-levison")
@@ -58,9 +55,9 @@ get '/newslink/:id/delete' do
   redirect '/newslink/'
 end
 
-get '/newslink/:id/comments' do
-  @newslink = Newslink.find(params[:id])
-  post_show.erb
+post '/newslink/:id/add-comment' do
+  Comment.create(author: params[:author], body: params[:body], newslink_id: params[:id])
+  redirect '/newslink/params[:id]/comments'
 end
 
 post '/newslink/:id/update' do

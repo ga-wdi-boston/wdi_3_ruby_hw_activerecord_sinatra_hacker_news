@@ -7,7 +7,7 @@
   <div class="info">
   
   <% points = newslink.up_votes - newslink.down_votes %> <%=points%> points | created at <%=newslink.created_at%> | 
-  <a href="/newslink/<%= newslink.id %>/comments"><%=newslink.comments.length %> COMMENTS</a> | 
+  <a href="/newslink/<%= newslink.id %>"><%=newslink.comments.length %> COMMENTS</a> | 
   <a href="/newslink/<%= newslink.id %>/edit">EDIT</a> | 
   <a href="/newslink/<%= newslink.id %>/delete">DELETE</a> |
   <a href="/newslink/<%= newslink.id %>/flag">FLAG POST</a>
