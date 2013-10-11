@@ -57,7 +57,7 @@ end
 
 post '/newslink/:id/add-comment' do
   Comment.create(author: params[:author], body: params[:body], newslink_id: params[:id])
-  redirect '/newslink/params[:id]/comments'
+  redirect "/newslink/#{params[:id]}"
 end
 
 post '/newslink/:id/update' do
@@ -89,5 +89,21 @@ post '/newslink/:id/down_vote' do
   downvoted.down_votes += 1
   downvoted.save
   redirect "/newslink/"
+end
+
+post '/newslink/:newslink_id/:comment_id/update-comment' do
+  comment = Comment.find(params[:comment_id])
+  comment.update(author: params[:author], body: params[:body])
+  redirect "/newslink/#{params[:newslink_id]}"
+end
+
+get '/newslink/:newslink_id/:comment_id/edit-comment' do
+  @comment = Comment.find(params[:comment_id])
+  erb :comment_edit
+end
+
+get '/newslink/:newslink_id/:comment_id/delete-comment' do
+  Comment.delete(params[:comment_id])
+  redirect "/newslink/#{params[:newslink_id]}"
 end
 
