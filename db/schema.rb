@@ -10,19 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131011034325) do
+ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "stories", force: true do |t|
-    t.string   "title"
-    t.string   "link"
-    t.text     "body"
-    t.integer  "up_votes",   default: 0
-    t.integer  "down_votes", default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end
