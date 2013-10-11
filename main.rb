@@ -9,6 +9,11 @@ set :database, {adapter: 'postgresql',
                 host: 'localhost'}
 
 class Post < ActiveRecord::Base
+  has_many :comments
+end
+
+class Comment < ActiveRecord::Base
+  belongs_to :post
 end
 
 get '/' do 
@@ -23,7 +28,7 @@ end
 
 post '/posts/:id/delete' do
   Post.find(params[:id]).destroy
-  redirect '/'
+  redirect ' /'
 end
 
 get '/posts/new' do
@@ -32,8 +37,6 @@ end
 
 post '/posts/create' do
   if params[:link] != "" && params[:body] != ""
-    redirect '/posts/new'
-  elsif params[:link] == "" && params[:body] == ""
     redirect '/posts/new'
   elsif params[:link] == "" && params[:body] == ""
     redirect '/posts/new'
@@ -60,8 +63,10 @@ end
 post '/posts/:id/downvote' do
   down_votes = Post.find(params[:id]).down_votes
   down_votes += 1
+  #shorthand is increment!(attribute, by = 1)
   total_votes = Post.find(params[:id]).total_votes
   total_votes -= 1
+  #decrement!(attribute, by = 1)
   Post.update(params[:id], :down_votes => down_votes,  :total_votes => total_votes)
   redirect '/'
 end

@@ -7,6 +7,13 @@
   <%= @post.body %>
 </div>
 
+<div class="comments">
+ <% @post.comments.each do |comment| %>
+ Author: <%= comment.author %>
+ Comment: <%= comment.body %>
+ <% end %>
+</div>
+
 <form action="/posts/<%= @post.id %>/upvote" method="post">
   <input type="submit" name="Up Vote" value="upvote" />
 </form>
