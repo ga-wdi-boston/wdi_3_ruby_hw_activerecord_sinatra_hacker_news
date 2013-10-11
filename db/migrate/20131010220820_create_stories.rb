@@ -1,5 +1,6 @@
 class CreateStories < ActiveRecord::Migration
 
+# db:migrate
   def up
   	create_table :stories do |t|
   		t.text :title
@@ -11,6 +12,7 @@ class CreateStories < ActiveRecord::Migration
   	end
   end
 
+# db:rollback
   def down
   	drop_table :stories
   end

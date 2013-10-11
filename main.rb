@@ -9,6 +9,10 @@ set :database, {adapter: 'postgresql',
 				host: 'localhost'}
 
 class Story < ActiveRecord::Base
+	has_many :comments
+end
+
+class Comment < ActiveRecord::Base
 end
 
 get '/hackernews' do
@@ -37,6 +41,13 @@ get '/hackernews/:id/delete' do
 	Story.find(params[:id]).delete
 	redirect '/hackernews'
 end
+###### need to work on this:
+get '/comment/:id/delete' do
+	@story = Story.find(params[:id])
+	@story.comments
+	redirect "/hackernews/#{params[:id]}"
+end
+######
 
 get '/hackernews/new' do
 	erb :story_new
@@ -48,11 +59,19 @@ get '/hackernews/:id' do
 	erb :story
 end
 
+post '/comment/:id/new' do
+	@story = Story.find(params[:id])
+	@story.comments.create(:author => params[:author], :body => params[:body])
+
+	redirect "/hackernews/#{params[:id]}"
+end
+
 post '/hackernews/create' do
+	# select one of two fields with
+	# if elsif else end
 	title = params[:title]
 	url = params[:url]
 	body = params[:body]
-	@stories = Story.all
 	@story = Story.create(title: title, url: url, body: body, upvotes: 0, downvotes: 0)
 
 	redirect '/hackernews'

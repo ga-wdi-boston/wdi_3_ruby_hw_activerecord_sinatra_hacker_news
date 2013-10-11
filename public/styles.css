@@ -88,3 +88,23 @@ button {
 	margin: 10px 10px 10px 0;
 	font-weight: thick;
 }
+
+.comments {
+	border: 2px solid gray;
+	width: 400px;
+	background: orange;
+	padding-left: 10px;
+}
+
+.each_comment {
+	border-bottom: 1px dotted gray;
+}
+
+.comment_author {
+	
+}
+
+.comment_body {
+	margin-bottom: 20px;
+}
+
