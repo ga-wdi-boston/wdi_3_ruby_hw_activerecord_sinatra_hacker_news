@@ -1,0 +1,21 @@
+.container {
+	text-align: center;
+}
+#voting{
+   width:30px;
+   height:40px;
+}
+.upvote{
+   width:30px;
+   height: 20px;
+   cursor: pointer;
+}
+.downvote:hover{
+   background-position: 0 0;
+}
+.downvote{
+   width:39px;
+   height: 20px;
+   background: url('./sprite.png') 0 0 no-repeat;
+   cursor: pointer;
+}

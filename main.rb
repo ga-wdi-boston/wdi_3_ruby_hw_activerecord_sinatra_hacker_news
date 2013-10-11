@@ -22,7 +22,7 @@ get '/new' do
 end
 
 post '/create' do
-	post = Post.create(title: params[:title], body: params[:body])
+	post = Post.create(title: params[:title], body: params[:body], link: params[:link],up_vote: params[:up_vote], down_vote: params[:down_vote], timestamps: [:timestamps])
 	redirect "/#{post.id}"
 end
 
@@ -31,4 +31,4 @@ get '/:id' do
 	erb :post_show
 end
 
-
+# up_vote: params[:up_vote], down_vote: params[:down_vote], timestamps: [:timestamps]
