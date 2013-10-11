@@ -6,8 +6,8 @@ class CreateStories < ActiveRecord::Migration
   		t.text :url
   		t.text :body
   		t.timestamps
-  		t.integer :upvotes
-  		t.integer :downvotes
+  		t.integer :upvotes, default: 0
+  		t.integer :downvotes, default: 0
   	end
   end
 
