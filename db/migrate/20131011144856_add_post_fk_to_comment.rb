@@ -4,6 +4,6 @@ class AddPostFkToComment < ActiveRecord::Migration
   end
 
   def down
-    add_columm :comments, :storyid, :integer
+    drop_columm :comments, :storyid, :integer
   end
 end

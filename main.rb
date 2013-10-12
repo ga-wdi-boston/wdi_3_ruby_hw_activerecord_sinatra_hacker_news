@@ -13,6 +13,7 @@ class Story < ActiveRecord::Base
 end
 
 class Comment < ActiveRecord::Base
+  belongs_to :story
 end
 
 get '/' do
@@ -65,4 +66,3 @@ post '/:id/create_comment' do
   Story.find(params[:id]).comments.create(body: params[:body], story_id: params[:body])
   redirect "/item/#{params[:id]}"
 end
-

@@ -3,12 +3,12 @@
 <a href="/upvote/<%= @story.id %>"><img src="https://news.ycombinator.com/grayarrow.gif" alt="up arrow" /></a><span class='small_gray'><%= @story.up_votes %></span>
 <a href="<%= @story.link %>"><%= @story.title %></a><br />
 <span class='small_gray'><%= @story.created_at %> | <%= @story.comments.count %> Comments</span>
-
+<br /><br />
 <form action='/<%= @story.id %>/create_comment' method='post'>
 	<textarea name='body' cols=60 rows=6></textarea><br />
 	<button type='submit'>add comment</button>
 </form>
-
+<div style="height: 4em;">&nbsp;</div>
 <div id ='comments'>
 	<% @story.comments.order(:comment_upvotes).reverse.each do |comment| %>
 		<span class='small_gray'>
