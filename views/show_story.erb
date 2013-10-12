@@ -1,2 +1,13 @@
-<a href=<%= @story %>><h2><%= @story.title %></h2></a>
-<div class="comment"><%= @story.body %></div>
+<a href=<%= @story.title %></h2></a>
+
+<div>
+	Author: <%= @story.author %>
+</div>
+
+<div>
+	Title: <%= @story.title %>
+</div>
+
+<div>
+	Body: <%= @story.body %>
+</div>

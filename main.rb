@@ -26,8 +26,8 @@ get '/new' do
 	erb :story_new
 end
 
-get '/:id' do 
-  @story = Story.new(params[:body])
+get '/:id/show' do 
+  @story = Story.find(params[:id])
   erb :show_story
 end
 
