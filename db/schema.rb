@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131011145620) do
+ActiveRecord::Schema.define(version: 20131012163232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20131011145620) do
     t.integer  "down_votes", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "author"
   end
 
 end
