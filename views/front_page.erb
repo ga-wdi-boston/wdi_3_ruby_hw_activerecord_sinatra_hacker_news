@@ -1,7 +1,12 @@
 
 
 <% @stories.each do |story| %>
-	<a href="<%= story.link %>"><h2><%= story.title %></h2></a>
+
+	<a href="<%= 'id' %>"><h2><%= story.title %></h2></a>
+
+
 	<div class="story-body"><%= story.body %></div>
+
 <% end %>
+
 <a href="/new">New Story</a>
