@@ -1,4 +1,4 @@
-<a href=<%= @story.title %></h2></a>
+<h2><%= @story.title %></h2>
 
 <div>
 	Author: <%= @story.author %>
@@ -11,3 +11,5 @@
 <div>
 	Body: <%= @story.body %>
 </div>
+
+<a href="/<%= @story.id %>/edit"><h2>Update Story</h2></a>

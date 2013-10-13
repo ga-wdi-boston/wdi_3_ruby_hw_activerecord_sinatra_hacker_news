@@ -1,11 +1,11 @@
-<form action="/update<%= @story.id %>/update" method="post">
+<form action="/<%= @story.id %>/update" method="post">
 	
 	<div>
-	Author: <input type="text" name="title" value="<%= @story.author %>"/>
+	Author: <input type="text" name="author" value="<%= @story.author %>"/>
 	</div>
 
 	<div>
-		Title: <input type="text" name="url" value="<%= @story.title %>"/>
+		Title: <input type="text" name="title" value="<%= @story.title %>"/>
 	</div>
 
 	<div>
