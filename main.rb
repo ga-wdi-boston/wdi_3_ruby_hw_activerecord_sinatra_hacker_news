@@ -48,9 +48,9 @@ end
 # This is for posting a new story to the database
 post '/create' do 
   Story.create(title: params[:title],
-                      author: params[:author], 
-                       link: params[:link], 
-                       body: params[:body])
+                        author: params[:author], 
+                        link: params[:link], 
+                        body: params[:body])
   redirect '/'
 end
 

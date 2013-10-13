@@ -1,6 +1,19 @@
+.top_menu {
+	font-style: Verdana;
+	font-size: 20px;
+	color: orange;
+	height:30px;
+	width:85%;
+	border: solid black;
+}
+
+
+
+
 body {
 	font-style: Verdana;
-	font-size: 10px;
+	font-size: 20px;
+	color: #828282;
 }
 
 

@@ -1,12 +1,15 @@
-
+<div class="top_menu">
+<a href="/new">Submit</a>
+<!-- <a href="/new">Comments</a>
+<a href="/new"></a> -->
+</div>
 
 <% @stories.each do |story| %>
 
+<div class="story-body">
 	<a href="<%= story.id %>"><h2><%= story.title %></h2></a>
-
-
-	<div class="story-body"><%= story.body %></div>
+	<%= story.body %>
+</div>
 
 <% end %>
 
-<a href="/new">New Story</a>
