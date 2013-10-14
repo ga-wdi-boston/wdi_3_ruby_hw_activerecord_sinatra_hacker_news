@@ -1,7 +1,6 @@
 <div class="top_menu">
 <a href="/new">Submit</a>
-<!-- <a href="/new">Comments</a>
-<a href="/new"></a> -->
+
 </div>
 
 <% @stories.each do |story| %>
@@ -11,5 +10,21 @@
 	<%= story.body %>
 </div>
 
+<div class="votes">
+<form action="/<%= story.id %>/up_votes" method="post">
+<input type="submit" name="upvoted" value="upvote" />
+</form>
+
+<form action="/<%= story.id %>/down_votes" method="post">
+<input type="submit" name="downvoted" value="downvote" />
+</form>
+</div>
+
+<form action="/<%= story.id %>/delete" method="post">
+				<button type="submit">remove</button>
+</form>
+
 <% end %>
+
+
 

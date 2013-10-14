@@ -13,7 +13,9 @@
 body {
 	font-style: Verdana;
 	font-size: 20px;
-	color: #828282;
+	color: grey;
+	width: 85%;
+	border: solid black;
 }
 
 

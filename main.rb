@@ -44,6 +44,11 @@ get '/:id/edit' do
   erb :story_edit
 end
 
+post '/:id/delete' do
+  Story.find(params[:id]).destroy
+  redirect '/'
+end
+
 
 # This is for posting a new story to the database
 post '/create' do 
@@ -61,11 +66,22 @@ post '/:id/update' do
                         title: params[:title],
                         link: params[:link],
                         body: params[:body])
-
   redirect "/"
 end
 
+post '/:id/up_votes' do
+  upvoted = Story.find(params[:id])
+  upvoted[:up_votes] += 1
+  upvoted.save
+  redirect "/"
+end
 
+post '/:id/down_votes' do
+  downvoted = Story.find(params[:id])
+  downvoted[:down_votes] += 1
+  downvoted.save
+  redirect "/"
+end
 
 
 
