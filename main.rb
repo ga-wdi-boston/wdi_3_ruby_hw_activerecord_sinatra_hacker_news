@@ -23,7 +23,7 @@ end
 
 # This is for showing all stories
 get '/' do
-	@stories = Story.all
+	@stories = Story.all.order("created_at DESC")
 	erb :front_page
 end
 

@@ -1,15 +1,23 @@
+
+
+
+<div class= "story_box">
+
 <h2><%= @story.title %></h2>
 
-<div>
+<div class= "display-story">
 	Author: <%= @story.author %>
 </div>
 
-<div>
+<div class= "display-story">
 	Title: <%= @story.title %>
 </div>
 
-<div>
+<div class= "display-story">
 	Body: <%= @story.body %>
 </div>
 
+<div class= "button">
 <a href="/<%= @story.id %>/edit"><h2>Update Story</h2></a>
+</div>
+</div>

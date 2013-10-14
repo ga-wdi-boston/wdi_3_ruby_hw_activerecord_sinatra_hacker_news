@@ -7,8 +7,11 @@
 	border: solid black;
 }
 
-
-
+/*.story_box {
+	width: 800px;
+	margin: 30px auto 25px auto;
+	background-color: #f6f6ef;
+*/
 
 body {
 	font-style: Verdana;
@@ -21,4 +24,35 @@ body {
 
 .story-body {
 text-align:justify;
+}
+
+button {
+	color: #000;
+	background: #FF6600;
+	border: 2px outset #FF6600;
+	font-family: verdana;
+	font-weight: bold;
+	text-align: left;
+	font-size: 14px;
+	display: inline-block;
+	margin: 0px;
+}
+
+.display_story {
+	margin-left: 20px;
+}
+
+.input_area {
+
+	color: #781351;
+	background: #fee3ad;
+	border: 1px solid #781351;
+}
+
+
+.text_area {
+
+	color: #781351;
+	background: #fee3ad;
+	border: 1px solid #781351;
 }
