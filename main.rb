@@ -28,7 +28,7 @@ end
 
 post '/posts/:id/delete' do
   Post.find(params[:id]).destroy
-  redirect ' /'
+  redirect '/'
 end
 
 get '/posts/new' do
