@@ -40,7 +40,7 @@ end
 
 # This is for editing a story
 get '/:id/edit' do
-  @story = Story.find(params[:id])
+  @story = Story.find(params[:id]).
   erb :story_edit
 end
 
@@ -58,7 +58,7 @@ post '/create' do
     author: params[:author], 
     link: params[:link], 
     body: params[:body])
-  redirect '/'
+  redirect "/"
 end
 
 # This is for updating a story in the databae

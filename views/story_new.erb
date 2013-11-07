@@ -1,24 +1,53 @@
-<form action="/create" method="post">
+ <script>
+$(document).ready(function() {
+		$("#sendButton").click(function(e) {
+			e.preventDefault();
+			sendForm();
+		});
 
-	<div class = "input_area">
-		Author: <input type="text" name="author" />
-	</div>
+function sendForm() {
+	var dataObj = {};
+	dataObj.author = $("#authorField").val();
+	dataObj.title = $("#titleField").val();
+	dataObj.input = $("#inputField").val();
+	dataObj.textArea = $("#textArea").val();
 
-	<div class = "input_area">
-		title: <input type="text" name="title" />
-	</div>
+	$.ajax({
+    url: '/create',
+    type: 'POST',
+    data: dataObj,
+    dataType: 'json'
+  })
 
-	<div class = "input_area">
-		url: <input type="url" name="link"/>
+    .success(function(responseObj) {sendFormSuccess(responseObj);
+     });
+}
 
-	</div>
+function sendFormSuccess(responseObj) {
+	alert("Form submitted Successfully.");
+	}
 	
-	<!-- <br> or <br> -->
+});
+</script>
+
+<form>
+<div class = "input_area">
+		Author: <input id="authorField" type="text" name="author" />
+	</div>
+
+	<div class = "input_area">
+		title: <input id="titleField" type="text" name="title" />
+	</div>
+
+	<div class = "input_area">
+		url: <input id="inputField" type="url" name="link"/>
+	</div>
 	
 	<div class = "text_area">
-		text: <textarea name="body" cols="60" rows="10"></textarea>
+		text: <textarea id="textArea" cols="60" rows="10"></textarea>
 	</div>
 
-	<button type="submit">Create Story</button>
+	<input id="sendButton" type="button" value="Create Story" />
 	
 </form>
+
