@@ -1,0 +1,65 @@
+html {
+	font-family: Verdana;
+}
+
+#container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.content {
+	background-color: #f6f6ef;
+	padding: 10px;
+}
+
+#head {
+	background-color: #ff6600;
+	padding: 3px;
+	height: 18px;
+}
+
+.content a, #comments p {
+	font-size: 13px;
+	color: black;
+	text-decoration: none;
+}
+
+#comments p {
+	margin-top: 3px;
+}
+
+.content a:visited {
+	color: #908982;
+}
+
+.small_gray, .small_gray a {
+	font-size: 9px;
+	color: #908982;
+}
+
+.small_gray a:hover {
+	text-decoration: underline;
+}
+
+#head span {
+	margin-right: 15px;
+}
+
+#wdinews a {
+	font-weight: bold;
+	color: #000000;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+#menu, #menu a {
+	font-size: 12px;
+	color: black;
+	text-decoration: none;
+}
+
+li {
+	font-size: 12px;
+	color: #908982;
+	margin-bottom: 7px;
+}
