@@ -1,0 +1,36 @@
+html {
+  font-family: 'Overlock', cursive;
+  font-size: 14px;
+}
+
+.container {
+  width: 85%;
+  background: rgba(147, 194, 205, 1.0000);
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.index-title {
+  display: inline;
+}
+
+.post-body {
+  display: inline;
+}
+
+
+.votes {
+  display: inline;
+}
+
+.votes ul{
+
+}
+
+.votes li{
+  display: inline-block;
+}
+
+h6 {
+  color: red;
+}

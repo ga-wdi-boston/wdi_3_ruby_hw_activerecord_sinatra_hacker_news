@@ -1,0 +1,12 @@
+<form action="/posts/<%= @post.id %>/update" method="post">
+  <div>Title: <input type="text" name="title" value="<%= @post.title %>"/></div>
+  <div>Link: <input type="text" name="link" value="<%= @post.link %>"/></div>
+  <div>Body: <textarea name="body" cols="60" rows="10">
+    <%= @post.body %>
+  </textarea></div>
+  <div>Created at: <%= @post.created_at %></div>
+  <div>Up Votes: <%= @post.up_votes %></div>
+  <div>Down Votes: <%= @post.down_votes %></div>
+
+  <button type="submit">Update Post</button>
+</form>

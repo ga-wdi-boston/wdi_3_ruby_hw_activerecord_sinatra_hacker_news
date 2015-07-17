@@ -1,0 +1,35 @@
+<div class="container">
+  <% @posts.each do |post| %>
+    <a href="/posts/<%= post.id %>"><h2 class="index-title"><%= post.title %></h2></a>
+    <h3 class="index-title"><%= post.created_at.strftime("Created on %m/%d/%y at %I:%M%p") %>
+    Link: <%= post.link %></h3>
+  <h5>Total Votes: <%= post.total_votes %></h5>
+  <div class="votes">
+  <ul>
+    <li>
+    <form action="/posts/<%= post.id %>/upvote" method="post">
+      <input type="submit" name="upvote" value="Up Vote" />
+    </form></li>
+    <li>
+    <form action="/posts/<%= post.id %>/downvote" method="post">
+      <input type="submit" name="downvote" value="Down Vote" />
+    </form>
+    </li>
+    <li>
+      <form action="/posts/<%= post.id %>/edit" method="get">
+        <input type="submit" name="editpost" value="Edit Post" />
+      </form>
+    </li>
+    <li>
+      <form action="/posts/<%= post.id %>/delete" method="post">
+        <input type="submit" name="delete" value="Delete" />
+      </form>
+  </li>
+  </ul>
+<% end %>
+
+<div>
+  <a href='/posts/new'>New Post</a>
+</div>
+
+</div>
