@@ -1,0 +1,12 @@
+
+<h2>Edit Post</h2>
+<form action="/hackernews/<%= @post.id %>/update" method="post">
+	<ul>
+	<li><p>TITLE</p><input name="title" type="text" value="<%= @post.title %>" /></li>
+	<li><p>LINK</p><input name="link" type="text" value="<%= @post.link %>"/></li>
+	<li><p>TEXT</p><input name="body" type="text" value="<%= @post.body %>"/></li>
+	</ul>
+	<div class="button">
+		<button type="submit">Update Post</button>
+	</div>
+</form>

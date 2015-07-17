@@ -1,0 +1,17 @@
+<div>
+	<% @posts.each do |post| %>
+	<div class="title">
+		<a href="/hackernews/<%= post.id %>">
+			<h2><%= post.title %></h2>
+		</a>
+	</div>
+	<div class="link">
+		<a href="<%= post.link %>"><%= post.link %></a>
+	<div class="body">
+		<p><%= post.body %>
+	</div>
+	<% end %>
+</div>
+<div class="button">
+	<a href='/hackernews/new'>New Post</a>
+</div>
