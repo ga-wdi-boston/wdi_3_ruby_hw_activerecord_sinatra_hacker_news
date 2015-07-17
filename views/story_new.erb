@@ -1,0 +1,53 @@
+ <script>
+$(document).ready(function() {
+		$("#sendButton").click(function(e) {
+			e.preventDefault();
+			sendForm();
+		});
+
+function sendForm() {
+	var dataObj = {};
+	dataObj.author = $("#authorField").val();
+	dataObj.title = $("#titleField").val();
+	dataObj.input = $("#inputField").val();
+	dataObj.textArea = $("#textArea").val();
+
+	$.ajax({
+    url: '/create',
+    type: 'POST',
+    data: dataObj,
+    dataType: 'json'
+  })
+
+    .success(function(responseObj) {sendFormSuccess(responseObj);
+     });
+}
+
+function sendFormSuccess(responseObj) {
+	alert("Form submitted Successfully.");
+	}
+	
+});
+</script>
+
+<form>
+<div class = "input_area">
+		Author: <input id="authorField" type="text" name="author" />
+	</div>
+
+	<div class = "input_area">
+		title: <input id="titleField" type="text" name="title" />
+	</div>
+
+	<div class = "input_area">
+		url: <input id="inputField" type="url" name="link"/>
+	</div>
+	
+	<div class = "text_area">
+		text: <textarea id="textArea" cols="60" rows="10"></textarea>
+	</div>
+
+	<input id="sendButton" type="button" value="Create Story" />
+	
+</form>
+

@@ -1,0 +1,19 @@
+<form action="/<%= @story.id %>/update" method="post">
+	
+	<div class = "input_area">
+		Author: <input type="text" name="author" value="<%= @story.author %>"/>
+	</div>
+
+	<div class = "input_area">
+		Title: <input type="text" name="title" value="<%= @story.title %>"/>
+	</div>
+
+	<div class = "text_area">
+		Body: <textarea name="body" cols=60 rows=10><%= @story.body %></textarea>
+	</div>
+
+	<div>
+		<button type="submit">Edit Story</button>
+	</div>
+
+</form>

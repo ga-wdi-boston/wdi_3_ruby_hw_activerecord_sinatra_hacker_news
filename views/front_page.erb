@@ -1,0 +1,33 @@
+<div class="">
+	<a href="/new">Submit</a>
+
+</div class= "story_box">
+
+<% @stories.each do |story| %>
+
+<div class="story-body">
+	<a href="<%= story.id %>"><h2><%= story.title %></h2></a>
+	<%= story.created_at %>
+	<%= story.body %>
+	<%= story.up_votes %>
+	<%= story.down_votes %>
+</div>
+
+<div class="button">
+	<form action="/<%= story.id %>/up_votes" method="post">
+		<input type="submit" name="upvoted" value="upvote" />
+	</form>
+
+	<form action="/<%= story.id %>/down_votes" method="post">
+		<input type="submit" name="downvoted" value="downvote" />
+	</form>
+</div>
+
+<form action="/<%= story.id %>/delete" method="post">
+	<button type="submit">remove</button>
+</form>
+
+<% end %>
+
+
+
