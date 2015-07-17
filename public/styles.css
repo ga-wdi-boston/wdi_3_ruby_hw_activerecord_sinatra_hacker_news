@@ -1,0 +1,110 @@
+.box {
+	margin: auto;
+	width: 1050px;
+}
+
+img {
+	border: 2px solid white;
+}
+
+.passed {
+	margin-top: 20px;
+}
+
+.downvotes {
+	margin-bottom: 20px;
+}
+
+.header {
+	text-align: left;
+	background: #ff622f;
+	margin: 0px auto 10px auto;
+	width: 100%;
+	float: left;
+	display: inline;
+}
+
+form {
+	margin-bottom: 20px;
+}
+
+#upvotes {
+	font-size: 12px;
+}
+
+#downvotes {
+	margin-left: 2px;
+	border-left: 1px solid black;
+	padding-left: 5px;
+	font-size: 12px;
+}
+
+#edit {
+	margin-left: 2px;
+	border-left: 1px solid black;
+	padding-left: 5px;
+	font-size: 12px;
+}
+
+#delete {
+	margin-left: 2px;
+	border-left: 1px solid black;
+	padding-left: 3px;
+	font-size: 12px;
+}
+
+.url {
+	font-size: 12px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a.visited {
+	color: grey;
+}
+
+ul {
+	margin-top: 7px;
+	height: 8px;
+    padding: 10px;
+    background: #ff622f;
+    }
+li {
+    display: inline;
+    padding: 0px 10px 0px 10px;
+}
+
+#submit {
+	color: purple;
+	padding: 3px;
+	border: 2px black solid;
+}
+
+button {
+	padding: 5px;
+	margin: 10px 10px 10px 0;
+	font-weight: thick;
+}
+
+.comments {
+	border: 2px solid gray;
+	width: 400px;
+	background: orange;
+	padding-left: 10px;
+}
+
+.each_comment {
+	border-bottom: 1px dotted gray;
+}
+
+.comment_author {
+	
+}
+
+.comment_body {
+	margin-bottom: 20px;
+}
+

@@ -1,0 +1,27 @@
+<div class="title">Title: <%= @story.title %></div>
+<div class="url">URL: <%= @story.url %></div>
+<div class="body">Body: <%= @story.body %></div>
+<div class="upvotes">Upvotes: <%= @story.upvotes %></div>
+<div class="downvotes">Downvotes: <%= @story.downvotes %></div>
+
+<form action="/hackernews/<%= @story.id %>/delete" method="post"><input type="submit" name="delete story" value="delete" />
+</form>
+
+<div class="comments">
+<h3>Comments:</h3>
+<% @story.comments.each do |comment| %>
+<div class="each_comment">
+<div class="comment_author"><%= comment.author %></div>
+<div class="comment_body"><%= comment.body %></div>
+
+<span id="delete"><a href="/comment/<%= @story.id %>/delete">Delete</a></span>
+<% end %>
+</div>
+</div>
+
+<h3>Submit a Comment: </h3>
+<form action="/comment/<%= @story.id %>/new" method="post">
+	Author: <div class="author"><input type="string" name="author" /></div>
+	Body: <div class="body"><textarea name="body" cols=40 rows=10></textarea></div>
+	<button type="submit">Submit Comment</button>
+</form>

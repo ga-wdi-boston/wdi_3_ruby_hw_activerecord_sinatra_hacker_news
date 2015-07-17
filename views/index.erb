@@ -1,0 +1,25 @@
+<% @stories.each do |story| %>
+<div>
+<span class="title"><a href="/hackernews/<%= story["id"] %>"><%= story["title"] %></a></span>
+<span class="url"><%= story["url"] %></span></div>
+<div class="votes">
+<span id="upvotes">Upvotes: <%= story["upvotes"] %></span>
+<span id="downvotes">Downvotes: <%= story["downvotes"] %>
+</span>
+<span id="edit"><a href="/hackernews/<%= story["id"] %>/edit">Edit</a></span>
+<span id="delete"><a href="/hackernews/<%= story["id"] %>/delete">Delete</a></span>
+</div>
+
+<div class="votes">
+<form action="/hackernews/<%= story["id"] %>/upvotes" method="post"><input type="submit" name="upvoted" value="upvote" />
+</form>
+
+<form action="/hackernews/<%= story["id"] %>/downvotes" method="post"><input type="submit" name="downvoted" value="downvote" />
+</form>
+</div>
+
+
+
+<% end %>
+
+<button type="submit"><a href='/hackernews/new'>Submit a Story</a></button>
