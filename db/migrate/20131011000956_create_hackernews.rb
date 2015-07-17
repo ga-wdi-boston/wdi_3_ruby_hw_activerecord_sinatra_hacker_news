@@ -1,0 +1,20 @@
+class CreateHackernews < ActiveRecord::Migration
+
+  def up
+  	create_table :stories do |t|
+  		t.string :title
+  		t.string  :link
+  		t.text :body
+  		t.integer :up_votes
+  		t.integer :down_votes
+  		t.timestamps :created_at
+  	end
+  end
+
+  def down
+  	drop_table :stories
+  end
+end
+
+
+
